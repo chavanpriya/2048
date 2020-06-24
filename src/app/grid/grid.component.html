@@ -1,0 +1,11 @@
+<div [@openClose]="isOpen ? 'open' : 'closed'" class="grid" [style.background-color]="colours[_gridValue]">
+
+    <!-- <div class="open-close-container"> -->
+
+        <ng-template [ngIf]="_gridValue != 0 ">{{_gridValue}}</ng-template>
+    <!-- </div> -->
+</div>
+
+<!-- <div [@openClose]="isOpen ? 'open' : 'closed'" class="open-close-container">
+    <p>The box is now {{ isOpen ? 'Open' : 'Closed' }}!</p>
+  </div> -->

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component ,HostListener} from '@angular/core';
+import { GameService } from './game.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,16 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'game2048';
+  public gameService: GameService;
+
+  
+  constructor(gameService: GameService) {
+    this.gameService = gameService;
+  }
+
+  @HostListener("window:keydown",["$event"])
+  keyPressed($event){
+    console.log($event.code);
+    this.gameService.play($event.code);
+  }
 }
